@@ -42,7 +42,8 @@ router.get('/:id/steps', (req, res) => {
     }
   })
   .catch(err => {
-    res.status(500).json({ message: 'Failed to get steps' });
+    console.error(err)
+    res.status(500).json({ message: 'Failed to get steps', error: err });
   });
 });
 
